@@ -17,14 +17,11 @@ function setup() {
 	bob3= new Bob(960,400,40);
 	bob4= new Bob(1040,400,40);
 	bob5= new Bob(1120,400,40);
-	rope1= new Rope(bob1.Body,{x:800,y:200})
-	rope2= new Rope(bob2.Body,{x:880,y:200})
-	rope3= new Rope(bob3.Body,{x:960,y:200})
-	rope4= new Rope(bob4.Body,{x:1040,y:200})
-	rope5= new Rope(bob5.Body,{x:1120,y:200})
-	
-	
-
+	rope1= new Rope(bob1.Body,roof.Body,-bobDiameter*2,0);
+	rope2= new Rope(bob2.Body,roof.Body,-bobDiameter*2,0);
+	rope3= new Rope(bob3.Body,roof.Body,-bobDiameter*2,0);
+	rope4= new Rope(bob4.Body,roof.Body,-bobDiameter*2,0);
+	rope5= new Rope(bob5.Body,roof.Body,-bobDiameter*2,0);
 	Engine.run(engine); 
 }
   

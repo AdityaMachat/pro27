@@ -1,8 +1,11 @@
 class Rope{
-    constructor(bodyA, pointB){
+    constructor(body1, body2,offsetX,offsetY){
+        this.offsetX=offsetX;
+        this.offsetY=offsetY;
         var options = {
-            bodyA: bodyA,
-            pointB: pointB,
+            bodyA: body1,
+            bodyb:body2,
+            pointB:{x:this.offsetX,y:this.offsetY},
             stiffness: 0.04,
             length: 10
         }
@@ -15,7 +18,7 @@ class Rope{
 
     display(){
         if(this.slingshot.bodyA ){
-        var pointA = this.slingshot.bodyA.position;
+        var pointA = this.slingshot.body1.position;
         var pointB = this.pointB;
         strokeWeight(4);
         line(pointA.x, pointA.y, pointB.x, pointB.y);
