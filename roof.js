@@ -15,8 +15,9 @@ class Roof{
         display(){
          var posx=this.body.position.x
          var posy=this.body.position.y
+        
          rectMode(CENTER);
          rect(posx,posy,this.width,this.height);
-
+        
         }
 }

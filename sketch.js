@@ -5,24 +5,25 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Render = Matter.Render;
 const Constraint = Matter.Constraint;
-
+var bobDiameter=40;
 
 function setup() {
 	createCanvas(2000, 800);
 	engine = Engine.create();
 	world = engine.world;
-	roof =  new Roof(960,200,400,20); 
-	bob1= new Bob(800,400,40);
-	bob2= new Bob(880,400,40);
-	bob3= new Bob(960,400,40);
-	bob4= new Bob(1040,400,40);
-	bob5= new Bob(1120,400,40);
-	rope1= new Rope(bob1.Body,roof.Body,-bobDiameter*2,0);
-	rope2= new Rope(bob2.Body,roof.Body,-bobDiameter*2,0);
-	rope3= new Rope(bob3.Body,roof.Body,-bobDiameter*2,0);
-	rope4= new Rope(bob4.Body,roof.Body,-bobDiameter*2,0);
-	rope5= new Rope(bob5.Body,roof.Body,-bobDiameter*2,0);
+	roof =  new Roof(960,200,300,20); 
+	bob1= new Bob(920,600,40);
+	bob2= new Bob(940,600,40);
+	bob3= new Bob(960,600,40);
+	bob4= new Bob(980,600,40);
+	bob5= new Bob(1040,600,40);
+	rope1= new Rope(bob1.body,roof.body,-80,0);
+	rope2= new Rope(bob2.body,roof.body,-40,0);
+	rope3= new Rope(bob3.body,roof.body,0,0);
+	rope4= new Rope(bob4.body,roof.body,40,0);
+	rope5= new Rope(bob5.body,roof.body,80,0);
 	Engine.run(engine); 
+
 }
   
 
@@ -43,7 +44,7 @@ function draw() {
 }
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-55});
+		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-10,y:-5});
 	}
 }
 

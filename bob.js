@@ -1,12 +1,12 @@
 class Bob{
     constructor(x,y,radius){
         var options ={
-            isStatic:true,
-             restitution:0.5,
-             density:1.2,
+            isStatic:false,
+             restitution:0.4,
+             density:0.09,
              friction:0.5,
         }
-        this.body= Bodies.circle(x,y,radius,options);
+        this.body= Bodies.circle(x,y,radius/2,options);
         this.radius=radius;
         World.add(world,this.body);
         }
@@ -14,8 +14,11 @@ class Bob{
         display(){
          var posx=this.body.position.x
          var posy=this.body.position.y
+         push();
+         translate(posx,posy);
          ellipseMode(CENTER);
-         ellipse(posx,posy,this.radius,this.radius);
+         ellipse(0,0,this.radius,this.radius);
+         pop();
 
         }
 }

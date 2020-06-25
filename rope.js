@@ -4,24 +4,28 @@ class Rope{
         this.offsetY=offsetY;
         var options = {
             bodyA: body1,
-            bodyb:body2,
+            bodyB:body2,
             pointB:{x:this.offsetX,y:this.offsetY},
             stiffness: 0.04,
-            length: 10
+            length: 200
         }
-        this.slingshot = Constraint.create(options);
-        this.pointB=pointB;
+        this.slingshot = Matter.Constraint.create(options);
         World.add(world, this.slingshot);
     }
-
-   
-
     display(){
         if(this.slingshot.bodyA ){
-        var pointA = this.slingshot.body1.position;
-        var pointB = this.pointB;
-        strokeWeight(4);
-        line(pointA.x, pointA.y, pointB.x, pointB.y);
+        var pointA = this.slingshot.bodyA.position;
+        var pointB = this.slingshot.bodyB.position;
+        strokeWeight(2);
+        var Anchor1X=pointA.x;
+        var Anchor1Y=pointA.y;
+
+        var Anchor2X=pointB.x+this.offsetX;
+        var Anchor2Y=pointB.y+this.offsetY;
+
+        line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
+
+        
         }
     }
     
